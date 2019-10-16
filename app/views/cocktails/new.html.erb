@@ -1,0 +1,9 @@
+<h1>New Cocktail</h1>
+<%= simple_form_for @cocktail do |f| %>
+ <div class="form-group m-5">
+   <%= f.input :name, label: "Nome do coquetel" %>
+ </div>
+ <%= f.button :submit, class: "btn-primary m-5" %>
+ <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+<% end %>
+<%= link_to "Voltar", cocktails_path, class: 'btn btn-secondary m-5' %>
