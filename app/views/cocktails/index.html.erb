@@ -1,8 +1,36 @@
-<h1>Cocktails</h1>
-<% @cocktails.each do |cocktail| %>
-<ul>
-<li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-</ul>
-<% end %>
-<%= link_to 'Novo Cocktail', new_cocktail_path, class:'btn bg-light mp-5'%>
+<div class="banner">
+  <div class="container">
+    <div class="transbox">
+      <h1>COCKTAILS </h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+    <% @cocktails.each do |cocktail| %>
+     <div class="col-sm-6 col-md-3">
+      <div class="card mb-5">
+        <%= image_tag "drink2.png", alt: "Drink", class: 'card-img-top' %>
+        <%= link_to cocktail.name, cocktail_path(cocktail), class:'btn btn-light justify-aling:center' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Beba água e seja feliz! <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
+
 

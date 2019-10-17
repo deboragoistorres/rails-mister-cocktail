@@ -1,14 +1,18 @@
-<h1>Cocktail</h1>
-<p><%= @cocktail.name %></p>
-<ul>
-<% @cocktail.doses.each do |dose| %>
-<li>
-<%= dose.description %> de <%= dose.ingredient.name  %>
-<%= link_to 'Apagar Dose', dose_path(dose.id),
-    method: :delete,
-    data: { confirm: "Are you sure?" }, class:'btn bg-light mp-5'
-%>
-</li>
-</ul>
-<% end %>
-<%= link_to 'Nova Dose', new_cocktail_dose_path(@cocktail), class:'btn bg-light mp-5'%>
+<div class="container">
+  <div class="transbox">
+    <h1><%= @cocktail.name %></h1>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li>
+        <%= dose.description %> de <%= dose.ingredient.name  %>
+        <%= link_to 'Apagar Dose', dose_path(dose.id),
+          method: :delete,
+          data: { confirm: "Are you sure?" }, class:'btn btn-link'%>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="container  px-md-5"><%= link_to 'Nova Dose', new_cocktail_dose_path(@cocktail), class:'btn btn-warning mp-5'%></div>
+
+</div>
+
