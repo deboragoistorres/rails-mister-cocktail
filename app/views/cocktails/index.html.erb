@@ -10,8 +10,9 @@
     <% @cocktails.each do |cocktail| %>
      <div class="col-sm-6 col-md-3">
       <div class="card mb-5">
-        <%= image_tag "drink2.png", alt: "Drink", class: 'card-img-top' %>
-        <%= link_to cocktail.name, cocktail_path(cocktail), class:'btn btn-light justify-aling:center' %>
+        <%= cl_image_tag("borisdrink",
+      height: 200) %>
+        <%= link_to cocktail.name, cocktail_path(cocktail), class:'btn btn-light justify-aling:center', style:'height: 100px'%>
       </div>
     </div>
     <% end %>

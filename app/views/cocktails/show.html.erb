@@ -3,6 +3,7 @@
     <h1><%= @cocktail.name %></h1>
     <ul>
       <% @cocktail.doses.each do |dose| %>
+     <%= image_tag @cocktail.photo.url(:bright_face) %>
       <li>
         <%= dose.description %> de <%= dose.ingredient.name  %>
         <%= link_to 'Apagar Dose', dose_path(dose.id),
