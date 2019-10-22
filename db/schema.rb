@@ -15,11 +15,25 @@ ActiveRecord::Schema.define(version: 2019_10_17_232931) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "balence_sheets", force: :cascade do |t|
+    t.string "cd_financial_account_company"
+    t.string "cd_financial_account_company_reduction"
+    t.string "financial_account_description"
+    t.float "anterior"
+    t.float "debt"
+    t.float "credit"
+    t.float "moviment"
+    t.float "current_balance"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "remote_photo_url"
   end
 
   create_table "doses", force: :cascade do |t|
